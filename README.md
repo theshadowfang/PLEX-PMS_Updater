@@ -1,6 +1,6 @@
 # PMS_Updater
 
-PMS_Updater.sh is a shell script for updating the Plex Media Server inside the FreeNAS/TrueNAS Plex plugin.
+PMS_Updater.sh is a shell script for updating the Plex Media Server inside the TrueNAS Core Plex plugin.
 
 This script will search the plex.tv download site for a download link and if it is newer than the currently installed version the script will download and optionaly install the new version.
 
@@ -10,7 +10,7 @@ This script will search the plex.tv download site for a download link and if it 
 Download the PMS_Updater.sh script in your jail:
 
 ```bash
-  fetch https://raw.githubusercontent.com/mstinaff/PMS_Updater/master/PMS_Updater.sh
+  fetch https://raw.githubusercontent.com/theshadowfang/PLEX-PMS_Updater/main/PMS_Updater.sh
 ```
 ## Usage
 
@@ -40,15 +40,3 @@ cd /tmp
 fetch https://downloads.plex.tv/plex-media-server-new/1.16.6.1592-b9d49bdb7/freebsd/PlexMediaServer-1.16.6.1592-b9d49bdb7-FreeBSD-amd64.tar.bz2
 PMS_Updater.sh -l /tmp/PlexMediaServer-1.16.6.1592-b9d49bdb7-FreeBSD-amd64.tar.bz2
 ```
-
-## Sidenotes
-
-Thanks to @sretalla at the [FreeNAS](https://www.truenas.com/community)/[TrueNAS](https://www.truenas.com/community) forums for all the help provided.
-
-[TrueNAS](https://www.truenas.com) (previously FreeNAS) is an excellent open-source network attached storage project based on FreeBSD that is very capable of storing even the largest media libraries
-
-[Plex](https://www.plex.tv) is an amazing media server/client platform that can organize and stream those same media libraries.
-
-TrueNAS (previously FreeNAS) has a plug-in architecture that makes running Plex Media Server on TrueNAS (previously FreeNAS) trivialy easy. But the available Plex Media Server plug-in is only as recent as the latest publicly available release.
-
-To address this I have made a script that can be copied into a running Plex Media Server plug-in, and without needing anything else installed it can search the Plex.tv download site using paid PlexPass credentials and check for newer versions. If a newer version is found it can either be downloaded and held for admin approval or automatically installed to the server.
